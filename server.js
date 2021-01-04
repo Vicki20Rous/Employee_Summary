@@ -1,17 +1,18 @@
 const inquirer = require("inquirer")
-const mysql = require("mysql")
+const mysql = require("mysql2")
 const cTable = require('console.table');
 
 const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "password",
+    password: "lula7600",
     database: "employee_trackerdb"
   });
 
 
 connection.connect(function(err) {
+  console.log("test")  
     if (err) throw err
     console.log("Connected as Id" + connection.threadId)
     startPrompt();
@@ -163,7 +164,7 @@ function addEmployee() {
 
   function updateEmployee() {
     connection.query("SELECT employee.last_name, role.title FROM employee JOIN role ON employee.role_id = role.id;", function(err, res) {
-    // console.log(res)
+    console.log(res)
      if (err) throw err
      console.log(res)
     inquirer.prompt([

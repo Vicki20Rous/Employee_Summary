@@ -1,7 +1,3 @@
-SELECT * FROM department;
-SELECT * FROM role;
-SELECT * FROM employee;
-
 INSERT INTO department (name)
 VALUE ("Sales");
 INSERT INTO department (name)
